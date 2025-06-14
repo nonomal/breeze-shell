@@ -1,7 +1,7 @@
 set_project("shell")
 set_policy("compatibility.version", "3.0")
-
-local version = "0.1.23"
+set_policy("package.requires_lock", true)
+local version = "0.1.26"
 
 set_languages("c++2b")
 set_warnings("all") 
@@ -15,7 +15,7 @@ includes("dependencies/quickjs-ng.lua")
 
 set_runtimes("MT")
 add_requires("breeze-glfw", {alias = "glfw"})
-add_requires("blook", "nanovg", "glad", "quickjs-ng", "nanosvg", "reflect-cpp", "wintoast", "cpptrace")
+add_requires("blook", "nanovg", "glad", "quickjs-ng", "nanosvg", "reflect-cpp", "wintoast", "cpptrace v0.8.3")
 
 target("ui")
     set_kind("static")
